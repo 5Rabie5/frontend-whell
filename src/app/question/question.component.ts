@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {GetQuestionService} from '../get-question.service';
 import {Question} from './question.model';
 
+
 @Component({
     selector: 'app-question',
     templateUrl: './question.component.html',
@@ -12,10 +13,20 @@ export class QuestionComponent implements OnInit {
     constructor(private getQuestionService: GetQuestionService) {
     }
 
-    question: any;
+     question: Question;
 
     ngOnInit(): void {
-        this.getQuestionService.get().subscribe(data => {
+
+    }
+
+    // getQuestion() {
+    //     this.getQuestionService.get().subscribe(data => {
+    //         this.question = data;
+    //         console.log(data);
+    //     });
+    // }
+    getQuestion(type: string) {
+        this.getQuestionService.get(type).subscribe(data => {
             this.question = data;
             console.log(data);
         });
