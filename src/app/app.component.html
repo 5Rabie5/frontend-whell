@@ -1,10 +1,9 @@
-<h1 class="bg-primary">hhhhhhhhhhhhhhhhhhhhhhh</h1>
-<h3 class="bg-warning">Press the wheel to land on a random prize</h3>
-<h3>Or press the button to land on the corresponding prize</h3>
+
+<br><br><br>
 <ngx-wheel
   #wheel
-  width='400'
-  height='400'
+  width='320'
+  height='320'
   spinDuration='8'
   [items]='items'
    [innerRadius]='20'
@@ -17,28 +16,32 @@
   (onSpinStart)='before()'
   (onSpinComplete)='after()'
 ></ngx-wheel>
-<div class="reset">
-  <button (click)="reset()">Reset</button>
-</div>
-<!--<div class="buttons">-->
-<!--  <button (click)="spin(0)">Prize 0</button>-->
-<!--  <button (click)="spin(1)">Prize 1</button>-->
-<!--  <button (click)="spin(2)">Prize 2</button>-->
-<!--  <button (click)="spin(3)">Prize 3</button>-->
-<!--  <button (click)="spin(4)">Prize 4</button>-->
-<!--  <button (click)="spin(5)">Prize 5</button>-->
-<!--  <button (click)="spin(6)">Prize 6</button>-->
-<!--  <button (click)="spin(7)">Prize 7</button>-->
-<!--  <button (click)="spin(8)">Prize 8</button>-->
-<!--  <button (click)="spin(9)">Prize 9</button>-->
-<!--  <button (click)="spin(10)">Prize 10</button>-->
-<!--  <button (click)="spin(11)">Prize 11</button>-->
+<!--<div class="reset">-->
+<!--    <button (click)="reset()">Reset</button>-->
 <!--</div>-->
-<div class="buttons">
-  <button (click)="random()">spin</button>
 
+<div >
+    <button  type="button"   class="btn btn-info btn-rounded" data-mdb-ripple-color="dark"
+            (click)="random()">spin</button>
 </div>
 
-<div>
-  <h1>{{question.type}}</h1>
+<br>
+<!--<div>-->
+
+<!--    <ul class="list-group list-group-flush">-->
+<!--        <li class="list-group-item  list-group-item-success" >{{question.question}} </li>-->
+<!--        <li class="list-group-item list-group-item-action">{{question.possibility1}}</li>-->
+<!--        <li class="list-group-item list-group-item-action">{{question.possibility2}}</li>-->
+<!--        <li class="list-group-item list-group-item-action">{{question.possibility3}}</li>-->
+<!--        <li class="list-group-item list-group-item-action">{{question.possibility4}}</li>-->
+<!--    </ul>-->
+<!--</div>-->
+
+<div *ngIf="hideQuestion" class="list-group list-group-flush w3-animate-fading w3-animate-zoom">
+    <a href="#" class="list-group-item   list-group-item-action active list-group-item-info fade-in " aria-current="true">
+        {{question.question}}    </a>
+    <a href="#" class="list-group-item list-group-item-action fade-in  ">{{question.possibility1}}</a>
+    <a href="#" class="list-group-item list-group-item-action fade-in  ">{{question.possibility2}}</a>
+    <a href="#" class="list-group-item list-group-item-action fade-in  ">{{question.possibility3}}</a>
+    <a href="#" class="list-group-item list-group-item-action fade-in show ">{{question.possibility4}}</a>
 </div>

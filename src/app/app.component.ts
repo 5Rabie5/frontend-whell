@@ -1,4 +1,4 @@
-import {Component, ViewChild, } from '@angular/core';
+import {Component, ViewChild,} from '@angular/core';
 import {NgxWheelComponent, TextAlignment, TextOrientation} from 'ngx-wheel';
 import {GetQuestionService} from './get-question.service';
 import {Question} from './question/question.model';
@@ -11,8 +11,8 @@ import {Question} from './question/question.model';
 })
 export class AppComponent {
 
-
-      question = {} as Question;
+    hideQuestion = false;
+    question = {} as Question;
 
     constructor(private getQuestionService: GetQuestionService) {
     }
@@ -31,13 +31,15 @@ export class AppComponent {
     // tslint:disable-next-line:use-lifecycle-interface
     ngOnInit(): void {
 
-        const colors = ['#FF0000', '#660660'];
+        const colors = ['#0063B2FF', '#9CC3D5FF', '#FDD835'];
+        // const colors = ['#FFF59D', '#FFEE58', '#FDD835'];
+
 
         this.items = this.typesArray.map((value) => ({
-            fillStyle: colors[value % 2],
+            fillStyle: colors[value % 3],
             text: this.des[value],
             id: value,
-            textFillStyle: 'white',
+            textFillStyle: 'black',
             textFontSize: '16'
         }));
     }
@@ -53,10 +55,12 @@ export class AppComponent {
 
 
     after() {
+        this.hideQuestion = true;
     }
 
     async random() {
         this.reset();
+        this.hideQuestion = false;
         this.idToLandOn = Math.floor(Math.random() * 5) + 1;
         // console.log(' land ' + this.des[this.idToLandOn]);
         // console.log(' land nm' + this.idToLandOn);
