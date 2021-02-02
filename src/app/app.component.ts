@@ -1,7 +1,8 @@
-import {Component, ViewChild,} from '@angular/core';
+import {Component, ViewChild, } from '@angular/core';
 import {NgxWheelComponent, TextAlignment, TextOrientation} from 'ngx-wheel';
 import {GetQuestionService} from './get-question.service';
 import {Question} from './question/question.model';
+import {AnswerModel} from './question/answer.model';
 
 
 @Component({
@@ -11,12 +12,17 @@ import {Question} from './question/question.model';
 })
 export class AppComponent {
 
-    hideQuestion = false;
-    question = {} as Question;
-
     constructor(private getQuestionService: GetQuestionService) {
     }
 
+
+    hideQuestion = false;
+    question = {} as Question;
+    answer = {} as AnswerModel;
+    visibility = [true, true, true, true];
+    i = 0;
+    totalPoint = 0;
+    point = 0;
     @ViewChild(NgxWheelComponent, {static: false}) wheel;
 
     seed = [...Array(6).keys()];
@@ -59,15 +65,15 @@ export class AppComponent {
     }
 
     async random() {
+        this.point = 0;
+        this.visibility = [true, true, true, true];
         this.reset();
         this.hideQuestion = false;
         this.idToLandOn = Math.floor(Math.random() * 5) + 1;
-        // console.log(' land ' + this.des[this.idToLandOn]);
-        // console.log(' land nm' + this.idToLandOn);
         await new Promise(resolve => setTimeout(resolve, 0));
         this.wheel.spin(this.idToLandOn);
         this.getQuestion(this.des[this.idToLandOn]);
-        // this.getQuestionService.get(this.des[this.idToLandOn]);
+
     }
 
     // async spin(prize) {
@@ -79,7 +85,19 @@ export class AppComponent {
     getQuestion(type: string) {
         this.getQuestionService.get(type).subscribe(data => {
             this.question = data;
-            console.log(this.question.type);
+
         });
+    }
+
+
+    check(question: Question, answerId: number) {
+        if (Number(question.correctAnswer) !== answerId) {
+            this.visibility[answerId - 1] = false;
+        } else {
+
+            this.point = this.visibility.filter(x => x === true).length * 25;
+            this.totalPoint = this.totalPoint + this.point;
+            this.hideQuestion = false;
+        }
     }
 }
