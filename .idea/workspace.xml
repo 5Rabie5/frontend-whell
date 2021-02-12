@@ -2,7 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52e79b08-b28b-467c-97f7-251f901c93dc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/app/wheel/question/question.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/wheel/question/question.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/emender.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/get-question.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/get-question.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/get-question.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/question/answer.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/wheel/question/answer.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/question/question.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/question/question.component.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/wheel/question/question.component.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/question/question.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/question/question.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/wheel/question/question.model.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +37,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/myserver" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/app/wheel" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
@@ -36,6 +49,9 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/assets/img" />
       <recent name="$PROJECT_DIR$/src/app/question" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/app/wheel" />
     </key>
   </component>
   <component name="RunManager" selected="npm.Angular CLI Server">
@@ -90,6 +106,8 @@
       <workItem from="1612247362349" duration="9196000" />
       <workItem from="1612482957349" duration="42000" />
       <workItem from="1612531088726" duration="26000" />
+      <workItem from="1612994520504" duration="2333000" />
+      <workItem from="1613041599687" duration="17804000" />
     </task>
     <servers />
   </component>
