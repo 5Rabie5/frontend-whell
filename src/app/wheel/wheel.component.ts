@@ -3,6 +3,7 @@ import {GetQuestionService} from '../get-question.service';
 import {NgxWheelComponent, TextAlignment, TextOrientation} from 'ngx-wheel';
 import {Question} from './question/question.model';
 import {QuestionComponent} from './question/question.component';
+import {TypesBoardComponent} from '../types-board/types-board.component';
 
 @Component({
     selector: 'app-wheel',
@@ -14,7 +15,7 @@ export class WheelComponent implements OnInit {
 
     @ViewChild(NgxWheelComponent, {static: false}) wheel;
     @ViewChild(QuestionComponent) questionComponent: QuestionComponent;
-
+    @ViewChild(TypesBoardComponent) typesBoardComponent: TypesBoardComponent;
     visibility = [true, true, true, true];
     question: Question;
     totalPoint = 0;
@@ -28,9 +29,11 @@ export class WheelComponent implements OnInit {
     items: any[];
     textOrientation: TextOrientation = TextOrientation.HORIZONTAL;
     textAlignment: TextAlignment = TextAlignment.OUTER;
-    const;
-    des = ['العهد الجديد', 'المختلف', 'أول من ', 'العهد القديم', 'تيبيكون', 'معاني'];
-
+      des = ['العهد الجديد', 'المختلف', 'أول من ', 'العهد القديم', 'تيبيكون', 'معاني'];
+    // des = this.typesBoardComponent.typesEmitter.subscribe((data3: any) => {
+    //     // this.showQuestion = true;
+    //     this.des = data3;
+    // });
 
     constructor(private getQuestionService: GetQuestionService) {
 
@@ -85,10 +88,11 @@ export class WheelComponent implements OnInit {
         this.getQuestionService.get().subscribe((data2: Question) => {
             // this.showQuestion = true;
             this.question = data2;
-            console.log('from qq' +  this.question);
+            console.log('from qq' + this.question);
         });
 
     }
+
     check(question: Question, answerId: number) {
         if (Number(question.correctAnswer) !== answerId) {
             this.visibility[answerId - 1] = false;
@@ -99,6 +103,7 @@ export class WheelComponent implements OnInit {
             this.showQuestion2 = false;
         }
     }
+
     // getQuestion(type: string) {
     //     this.getQuestionService.get().subscribe((data: Question) => {
     //         this.question = data;

@@ -1,11 +1,39 @@
 <div class="btn-group btn-matrix"  data-toggle="buttons">
-    <button type="checkbox" id="أول من" class="btn btn-primary btn-lg" (click)="cheaked()">أول من</button>
-    <button type="checkbox" id="العهد القديم" class="btn btn-secondary btn-lg">العهد القديم</button>
-    <button type="checkbox" id="1" class="btn btn-success btn-lg">العهد الجديد</button>
-    <button type="checkbox" id="22" class="btn btn-danger btn-lg">المختلف</button>
-    <button type="checkbox" id="3" class="btn btn-warning btn-lg">معاني</button>
-    <button type="checkbox" id="4" class="btn btn-info btn-lg">تيبيكون</button>
-    <button type="checkbox" id="5" class="btn btn-light btn-lg">أعداد</button>
-    <button type="checkbox" id="6" class="btn btn-dark btn-lg">أنبياء</button>
-    <button type="checkbox" id="7" class="btn btn-primary btn-lg">أعمال</button>
+
+    <button type="button" id="1" class="btn btn-primary btn-lg" (click)="checked($event)"
+    [ngStyle]="{'background-color':colorVal,'box-shadow':shadowVal,'transform':transformVal}"
+    >أول من</button>
+
+    <button type="button" id="2" class="btn btn-secondary btn-lg"(click)="checked($event)"
+            [ngStyle]="{'background-color':colorVal,'box-shadow':shadowVal,'transform':transformVal}"
+    >العهد القديم</button>
+
+    <button type="button" id="3" class="btn btn-success btn-lg" (click)="checked($event)"
+            [ngStyle]="{'background-color':colorVal,'box-shadow':shadowVal,'transform':transformVal}"
+    >العهد الجديد</button>
+
+    <button type="button" id="4" class="btn btn-danger btn-lg" (click)="checked($event)"
+            [ngStyle]="{'background-color':colorVal,'box-shadow':shadowVal,'transform':transformVal}"
+    >المختلف</button>
+
+    <button type="button" id="5" class="btn btn-warning btn-lg" (click)="checked($event)"
+            [ngStyle]="{'background-color':colorVal,'box-shadow':shadowVal,'transform':transformVal}"
+    >معاني</button>
+
+    <button type="button" id="6" class="btn btn-info btn-lg" (click)="checked($event)"
+            [ngStyle]="{'background-color':colorVal,'box-shadow':shadowVal,'transform':transformVal}"
+    >تيبيكون</button>
+
+    <button type="button" id="7" class="btn btn-light btn-lg" (click)="checked($event)"
+            [ngStyle]="{'background-color':colorVal,'box-shadow':shadowVal,'transform':transformVal}"
+    >أعداد</button>
+
+    <button type="button" id="8" class="btn btn-dark btn-lg" (click)="checked($event)"
+            [ngStyle]="{'background-color':colorVal,'box-shadow':shadowVal,'transform':transformVal}"
+    >أنبياء</button>
+
+    <button type="button" id="9" class="btn btn-primary btn-lg" (click)="checked($event)"
+            [ngStyle]="{'background-color':colorVal,'box-shadow':shadowVal,'transform':transformVal}"
+    >أعمال</button>
+
 </div>
