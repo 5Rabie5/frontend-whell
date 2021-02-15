@@ -1,9 +1,9 @@
-import {ChangeDetectionStrategy, Component, OnInit, Output, ViewChild} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {GetQuestionService} from '../get-question.service';
 import {NgxWheelComponent, TextAlignment, TextOrientation} from 'ngx-wheel';
 import {Question} from './question/question.model';
 import {QuestionComponent} from './question/question.component';
-import {TypesBoardComponent} from '../types-board/types-board.component';
+import {TypesBoardComponent} from './types-board/types-board.component';
 
 @Component({
     selector: 'app-wheel',
@@ -23,23 +23,26 @@ export class WheelComponent implements OnInit {
     showQuestion2 = false;
     ttype: string;
     index: string;
-    seed = [...Array(6).keys()];
     typesArray = [0, 1, 2, 3, 4, 5];
     idToLandOn: number;
     items: any[];
     textOrientation: TextOrientation = TextOrientation.HORIZONTAL;
     textAlignment: TextAlignment = TextAlignment.OUTER;
-      des = ['العهد الجديد', 'المختلف', 'أول من ', 'العهد القديم', 'تيبيكون', 'معاني'];
-    // des = this.typesBoardComponent.typesEmitter.subscribe((data3: any) => {
-    //     // this.showQuestion = true;
-    //     this.des = data3;
-    // });
+     des = ['العهد الجديد', 'المختلف', 'أول من ', 'العهد القديم', 'تيبيكون', 'معاني'];
+     des2 = [];
+    i = this.des.length;
+    // seed = [...Array(this.i).keys()];
 
     constructor(private getQuestionService: GetQuestionService) {
 
     }
 
     ngOnInit(): void {
+
+        // this.typesBoardComponent.typesEmitter.subscribe((data3: string[]) => {
+        //     // this.showQuestion = true;
+        //     this.des = data3;
+        // });
         const colors = ['#0063B2FF', '#9CC3D5FF', '#FDD835'];
         // const colors = ['#FFF59D', '#FFEE58', '#FDD835'];
 
@@ -53,14 +56,36 @@ export class WheelComponent implements OnInit {
         }));
     }
 
+    generateNumArray(num: number) {
+        this.typesArray = Array.from(Array(num).keys());
+        console.log(this.typesArray);
+    }
+
+    wheelRefresh() {
+        console.log(this.des);
+        const colors = ['#0063B2FF', '#9CC3D5FF', '#FDD835'];
+        // const colors = ['#FFF59D', '#FFEE58', '#FDD835'];
+        this.generateNumArray(this.des.length);
+        this.items = this.typesArray.map((value) => ({
+            fillStyle: colors[value % 3],
+            text: this.des[value],
+            id: value,
+            textFillStyle: 'black',
+            textFontSize: '16'
+        }));
+    }
+
+    changeTypes(types: string[]) {
+        this.des = types;
+    }
+
     reset() {
         this.wheel.reset();
 
     }
 
     before() {
-
-//     alert('Your wheel is about to spin')
+        //     alert('Your wheel is about to spin')
     }
 
 
@@ -76,13 +101,11 @@ export class WheelComponent implements OnInit {
         this.visibility = [true, true, true, true];
         this.showQuestion2 = false;
         this.reset();
-        this.idToLandOn = Math.floor(Math.random() * 5) + 1;
+        this.idToLandOn = Math.floor(Math.random() * (this.i - 1)) + 1;
         await new Promise(resolve => setTimeout(resolve, 0));
         this.wheel.spin(this.idToLandOn);
         this.ttype = this.des[this.idToLandOn];
         // this.getQuestion(this.ttype);
-
-
         // console.log(this.questionComponent.question);
         this.getQuestionService.myMethod(this.ttype);
         this.getQuestionService.get().subscribe((data2: Question) => {
@@ -118,4 +141,7 @@ export class WheelComponent implements OnInit {
     // }
 
 
+    done() {
+
+    }
 }

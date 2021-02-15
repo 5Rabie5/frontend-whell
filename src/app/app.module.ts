@@ -7,7 +7,7 @@ import {WheelSelectorModule} from '@hyperblob/ngx-wheel-selector';
 import {QuestionComponent} from './wheel/question/question.component';
 import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
-import { TypesBoardComponent } from './types-board/types-board.component';
+import { TypesBoardComponent } from './wheel/types-board/types-board.component';
 import { WheelComponent } from './wheel/wheel.component';
 
 @NgModule({

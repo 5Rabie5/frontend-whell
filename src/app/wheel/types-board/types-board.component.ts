@@ -12,7 +12,7 @@ export class TypesBoardComponent implements OnInit {
     checkedFlag = [false, true, true, true, true, true, true, false, false, false];
     types = ['العهد الجديد', 'المختلف', 'أول من', 'العهد القديم', 'تيبيكون', 'معاني'];
     id: number;
-    @Output() typesEmitter: EventEmitter<any> = new EventEmitter();
+    @Output() typesEmitter: EventEmitter<string[]> = new EventEmitter<string[]>();
 
     constructor() {
     }
@@ -20,10 +20,14 @@ export class TypesBoardComponent implements OnInit {
     ngOnInit(): void {
     }
 
-    cleanArray(array: Array<any>) {
-        array.filter(el => {
-            return el != null && el !== '';
-        });
+    cleanArray(array: Array<string>) {
+        // array.filter(el => {
+        //     return el !== '""' && el !== 'oo';
+        // });
+        array.sort();
+        array.shift();
+        // console.log(array);
+        // console.log(array.length);
     }
 
     checked(event) {
@@ -36,7 +40,7 @@ export class TypesBoardComponent implements OnInit {
             this.checkedFlag[this.id] = false;
             this.types.forEach((element, index) => {
                 if (element === type) {
-                    delete this.types[index];
+                    this.types[index] = this.types[index].replace(element, '');
                 }
             });
             this.cleanArray(this.types);
@@ -44,10 +48,14 @@ export class TypesBoardComponent implements OnInit {
         } else {
             this.checkedFlag[this.id] = true;
             this.types.push(type);
-            this.cleanArray(this.types);
+            // this.cleanArray(this.types);
+            this.typesEmitter.emit(this.types);
+            // console.log(this.types);
         }
-        console.log(this.types);
+
     }
+
+
 }
 
 // this.colorVal = '#64b5f6';
