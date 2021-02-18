@@ -35,9 +35,12 @@
     <a *ngIf="visibility[3]" role="button" (click)="check(question,4)"
        class="list-group-item list-group-item-action fade-in show ">{{question.possibility4}}</a>
 </div>
-<app-types-board (typesEmitter)="changeTypes($event)"></app-types-board>
+<app-types-board   *ngIf="typesFlag"  (typesEmitter)="changeTypes($event)"></app-types-board>
 <div>
     <button type="button" class="btn btn-info btn-rounded" data-mdb-ripple-color="dark"
-            (click)="wheelRefresh()">done
+            (click)="wheelRefresh()">wheel Refresh
+    </button>
+    <button type="button" class="btn btn-info btn-rounded" data-mdb-ripple-color="dark"
+            (click)="changeTypesFlag()">change the types
     </button>
 </div>

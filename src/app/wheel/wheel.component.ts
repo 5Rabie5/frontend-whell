@@ -22,27 +22,20 @@ export class WheelComponent implements OnInit {
     point: number;
     showQuestion2 = false;
     ttype: string;
+    typesFlag = false as boolean;
     index: string;
     typesArray = [0, 1, 2, 3, 4, 5];
     idToLandOn: number;
     items: any[];
     textOrientation: TextOrientation = TextOrientation.HORIZONTAL;
     textAlignment: TextAlignment = TextAlignment.OUTER;
-     des = ['العهد الجديد', 'المختلف', 'أول من ', 'العهد القديم', 'تيبيكون', 'معاني'];
-     des2 = [];
-    i = this.des.length;
+    des = ['العهد الجديد', 'المختلف', 'أول من ', 'العهد القديم', 'تيبيكون', 'معاني'];
+     i = this.des.length;
     // seed = [...Array(this.i).keys()];
-
-    constructor(private getQuestionService: GetQuestionService) {
-
+      constructor(private getQuestionService: GetQuestionService) {
     }
 
     ngOnInit(): void {
-
-        // this.typesBoardComponent.typesEmitter.subscribe((data3: string[]) => {
-        //     // this.showQuestion = true;
-        //     this.des = data3;
-        // });
         const colors = ['#0063B2FF', '#9CC3D5FF', '#FDD835'];
         // const colors = ['#FFF59D', '#FFEE58', '#FDD835'];
 
@@ -58,7 +51,6 @@ export class WheelComponent implements OnInit {
 
     generateNumArray(num: number) {
         this.typesArray = Array.from(Array(num).keys());
-        console.log(this.typesArray);
     }
 
     wheelRefresh() {
@@ -73,6 +65,7 @@ export class WheelComponent implements OnInit {
             textFillStyle: 'black',
             textFontSize: '16'
         }));
+        this.typesFlag = false;
     }
 
     changeTypes(types: string[]) {
@@ -81,10 +74,10 @@ export class WheelComponent implements OnInit {
 
     reset() {
         this.wheel.reset();
-
     }
 
     before() {
+
         //     alert('Your wheel is about to spin')
     }
 
@@ -113,7 +106,7 @@ export class WheelComponent implements OnInit {
             this.question = data2;
             console.log('from qq' + this.question);
         });
-
+        console.log(this.des);
     }
 
     check(question: Question, answerId: number) {
@@ -144,4 +137,15 @@ export class WheelComponent implements OnInit {
     done() {
 
     }
+
+    changeTypesFlag() {
+        this.typesFlag = true;
+    }
+
+    // reloadCurrentRoute() {
+    //     const currentUrl = this.router.url;
+    //     this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
+    //         this.router.navigate([currentUrl]);
+    //     });
+    // }
 }
