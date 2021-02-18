@@ -17,11 +17,11 @@
 
 
 <div>
-    <button type="button" class="btn btn-info btn-rounded" data-mdb-ripple-color="dark"
-            (click)="spin()">spin
+    <button type="button" *ngIf="typesFlag === false"  class="btn btn-info btn-rounded" data-mdb-ripple-color="dark"
+            (click)="spin()">فتشوا الكتب
     </button>
 </div>
-<h1>{{totalPoint}}</h1>
+<h1 *ngIf="typesFlag === false">{{totalPoint}}</h1>
 <div *ngIf="showQuestion2" class="list-group list-group-flush w3-animate-fading w3-animate-zoom">
     <a href="#" class="list-group-item   list-group-item-action active list-group-item-info fade-in "
        aria-current="true">
@@ -35,12 +35,16 @@
     <a *ngIf="visibility[3]" role="button" (click)="check(question,4)"
        class="list-group-item list-group-item-action fade-in show ">{{question.possibility4}}</a>
 </div>
-<app-types-board   *ngIf="typesFlag"  (typesEmitter)="changeTypes($event)"></app-types-board>
+<app-types-board   *ngIf="typesFlag" (typesEmitter)="changeTypes($event)"></app-types-board>
 <div>
-    <button type="button" class="btn btn-info btn-rounded" data-mdb-ripple-color="dark"
-            (click)="wheelRefresh()">wheel Refresh
+    <button type="button" *ngIf="typesFlag" class="btn btn-info btn-rounded" data-mdb-ripple-color="dark"
+            (click)="wheelRefresh()">قد تم
     </button>
-    <button type="button" class="btn btn-info btn-rounded" data-mdb-ripple-color="dark"
-            (click)="changeTypesFlag()">change the types
+    <button type="button" *ngIf="typesFlag === false" class="btn btn-info btn-rounded" data-mdb-ripple-color="dark"
+            (click)="changeTypesFlag()">تغيير انماط الاسئله
     </button>
 </div>
+
+<!--
+
+-->

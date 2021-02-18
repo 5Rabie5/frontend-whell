@@ -30,9 +30,10 @@ export class WheelComponent implements OnInit {
     textOrientation: TextOrientation = TextOrientation.HORIZONTAL;
     textAlignment: TextAlignment = TextAlignment.OUTER;
     des = ['العهد الجديد', 'المختلف', 'أول من ', 'العهد القديم', 'تيبيكون', 'معاني'];
-     i = this.des.length;
+    i = this.des.length;
+
     // seed = [...Array(this.i).keys()];
-      constructor(private getQuestionService: GetQuestionService) {
+    constructor(private getQuestionService: GetQuestionService) {
     }
 
     ngOnInit(): void {
@@ -54,10 +55,10 @@ export class WheelComponent implements OnInit {
     }
 
     wheelRefresh() {
-        console.log(this.des);
         const colors = ['#0063B2FF', '#9CC3D5FF', '#FDD835'];
         // const colors = ['#FFF59D', '#FFEE58', '#FDD835'];
         this.generateNumArray(this.des.length);
+        console.log(this.des.length);
         this.items = this.typesArray.map((value) => ({
             fillStyle: colors[value % 3],
             text: this.des[value],
