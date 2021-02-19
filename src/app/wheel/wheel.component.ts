@@ -31,6 +31,7 @@ export class WheelComponent implements OnInit {
     textAlignment: TextAlignment = TextAlignment.OUTER;
     des = ['العهد الجديد', 'المختلف', 'أول من ', 'العهد القديم', 'تيبيكون', 'معاني'];
     i = this.des.length;
+    spinButtonFlag = true;
 
     // seed = [...Array(this.i).keys()];
     constructor(private getQuestionService: GetQuestionService) {
@@ -78,7 +79,7 @@ export class WheelComponent implements OnInit {
     }
 
     before() {
-
+        this.spinButtonFlag = false;
         //     alert('Your wheel is about to spin')
     }
 
@@ -118,6 +119,7 @@ export class WheelComponent implements OnInit {
             this.point = this.visibility.filter(x => x === true).length * 25;
             this.totalPoint = this.totalPoint + this.point;
             this.showQuestion2 = false;
+            this.spinButtonFlag = true;
         }
     }
 

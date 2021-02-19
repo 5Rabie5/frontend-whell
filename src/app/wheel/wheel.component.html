@@ -17,7 +17,7 @@
 
 
 <div>
-    <button type="button" *ngIf="typesFlag === false"  class="btn btn-info btn-rounded" data-mdb-ripple-color="dark"
+    <button type="button" *ngIf="typesFlag === false && showQuestion2===false && spinButtonFlag"  class="btn btn-info btn-rounded" data-mdb-ripple-color="dark"
             (click)="spin()">فتشوا الكتب
     </button>
 </div>
@@ -37,9 +37,14 @@
 </div>
 <app-types-board   *ngIf="typesFlag" (typesEmitter)="changeTypes($event)"></app-types-board>
 <div>
-    <button type="button" *ngIf="typesFlag" class="btn btn-info btn-rounded" data-mdb-ripple-color="dark"
-            (click)="wheelRefresh()">قد تم
-    </button>
+<!--    <button type="button" *ngIf="typesFlag" class="btn btn-info btn-rounded" data-mdb-ripple-color="dark"-->
+<!--            (click)="wheelRefresh()">قد تم-->
+<!--    </button>-->
+<br><br>
+    <button *ngIf="typesFlag" type="button"  class="btn btn-primary1 btn-lg btn3d" (click)="wheelRefresh()"
+    ><span class="glyphicon glyphicon-ok"></span>قد تم</button>
+
+
     <button type="button" *ngIf="typesFlag === false" class="btn btn-info btn-rounded" data-mdb-ripple-color="dark"
             (click)="changeTypesFlag()">تغيير انماط الاسئله
     </button>

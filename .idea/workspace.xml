@@ -5,8 +5,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/wheel/types-board/types-board.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/wheel/types-board/types-board.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/wheel/types-board/types-board.component.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/wheel/types-board/types-board.component.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/wheel/types-board/types-board.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/wheel/types-board/types-board.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/wheel/wheel.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/wheel/wheel.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/wheel/wheel.component.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/wheel/wheel.component.less" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/wheel/wheel.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/wheel/wheel.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -104,7 +104,7 @@
       <workItem from="1613256323799" duration="2189000" />
       <workItem from="1613333804188" duration="3685000" />
       <workItem from="1613381204308" duration="8424000" />
-      <workItem from="1613582348925" duration="29374000" />
+      <workItem from="1613582348925" duration="35285000" />
     </task>
     <servers />
   </component>
