@@ -79,7 +79,7 @@ export class WheelComponent implements OnInit {
     }
 
     before() {
-        this.spinButtonFlag = false;
+        // this.spinButtonFlag = false;
         //     alert('Your wheel is about to spin')
     }
 
@@ -137,9 +137,6 @@ export class WheelComponent implements OnInit {
     // }
 
 
-    done() {
-
-    }
 
     changeTypesFlag() {
         this.typesFlag = true;

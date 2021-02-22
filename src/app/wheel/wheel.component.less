@@ -19,3 +19,64 @@
   box-shadow:0 0 0 1px #6e6161 inset, 0 0 0 2px rgb(216, 213, 229) inset, 0 8px 0 0 #636366, 0 8px 0 1px rgba(0,0,0,0.4), 0 8px 8px 1px rgba(0,0,0,0.5);
   background-color: #c7eeb5;
 }
+
+.btn-primary {
+  box-shadow:0 0 0 1px #428bca inset, 0 0 0 2px rgba(255,255,255,0.15) inset, 0 8px 0 0 #357ebd, 0 8px 0 1px rgba(0,0,0,0.4), 0 8px 8px 1px rgba(0,0,0,0.5);
+  background-color:#428bca;
+}
+#btnTypes{
+  position: relative;
+  right: 500px;
+
+}
+
+.box {
+  display: flex;
+  position: relative;
+  left: 400px;
+}
+
+.box .inner {
+  width: 200px;
+  height: 100px;
+  line-height: 100px;
+  font-size: 2.5em;
+  font-family: sans-serif;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.box .inner:first-child {
+  background-color: #27c8dd;
+  color: #0c43b1;
+  transform-origin: right;
+  transform: perspective(100px) rotateY(-15deg);
+}
+
+.box .inner:last-child {
+  background-color: #2698e0;
+  color: antiquewhite;
+  transform-origin: left;
+  transform: perspective(100px) rotateY(15deg);
+}
+
+.box .inner span {
+  position: absolute;
+  animation: marquee 5s linear infinite;
+}
+
+.box .inner:first-child span {
+  animation-delay: 2.5s;
+  left: -100%;
+}
+
+@keyframes marquee {
+  from {
+    left: 100%;
+  }
+
+  to {
+    left: -100%;
+  }
+}

@@ -1,40 +1,41 @@
-<div class="btn-group btn-matrix"  data-toggle="buttons">
+<div class="btn-group btn-matrix" data-toggle="buttons">
 
     <button type="button" id="2" class="btn btn-primary btn-lg btn3d" (click)="checked($event)"
-    [ngStyle]="{'background-color':colorVal,'box-shadow':shadowVal,'transform':transformVal}"
-    >أول من<span class="glyphicon glyphicon-ok"></span></button>
+            [ngStyle]="{'opacity':opacityVal2}" >أول من
+    </button>
 
-    <button type="button" id="3" class="btn btn-secondary btn-lg text-danger btn3d"(click)="checked($event)"
-            [ngStyle]="{'background-color':colorVal,'box-shadow':shadowVal,'transform':transformVal}"
-    >العهد القديم<span class="glyphicon glyphicon-ok"></span></button>
+    <button type="button" id="3" class="btn btn-secondary btn-lg text-danger btn3d" (click)="checked($event)"
+            [ngStyle]="{'opacity':opacityVal3}">العهد القديم
+    </button>
 
-    <button type="button" id="0" class="btn btn-success btn-lg btn3d" (click)="checked($event)"
-            [ngStyle]="{'background-color':colorVal,'box-shadow':shadowVal,'transform':transformVal}"
-    >العهد الجديد<span class="glyphicon glyphicon-ok"></span></button>
+    <button type="button" id="0"  [ngStyle]="{'opacity':opacityVal0}" class="btn btn-success btn-lg btn3d" (click)="checked($event)"
+            >العهد الجديد
+    </button>
     <br>
     <button type="button" id="1" class="btn btn-danger btn-lg btn3d" (click)="checked($event)"
-            [ngStyle]="{'background-color':colorVal,'box-shadow':shadowVal,'transform':transformVal}"
-    >المختلف<span class="glyphicon glyphicon-ok"></span></button>
+            [ngStyle]="{'opacity':opacityVal1}" >المختلف
+    </button>
 
     <button type="button" id="5" class="btn btn-warning btn-lg btn3d" (click)="checked($event)"
-            [ngStyle]="{'background-color':colorVal,'box-shadow':shadowVal,'transform':transformVal}"
-    >معاني<span class="glyphicon glyphicon-ok"></span></button>
+            [ngStyle]="{'opacity':opacityVal5}" >معاني
+    </button>
 
     <button type="button" id="4" class="btn btn-info btn-lg btn3d" (click)="checked($event)"
-            [ngStyle]="{'background-color':colorVal,'box-shadow':shadowVal,'transform':transformVal}"
-    >تيبيكون<span class="glyphicon glyphicon-ok"></span></button>
+            [ngStyle]="{'opacity':opacityVal4}">تيبيكون
+    </button>
     <br>
     <button type="button" id="6" class="btn btn-light btn-lg btn3d" (click)="checked($event)"
-            [ngStyle]="{'background-color':colorVal,'box-shadow':shadowVal,'transform':transformVal}"
-    >أعداد<span class="glyphicon glyphicon-ok"></span></button>
+            [ngStyle]="{'opacity':opacityVal6}" >أعداد
+    </button>
 
     <button type="button" id="7" class="btn btn-dark btn-lg btn3d" (click)="checked($event)"
-            [ngStyle]="{'background-color':colorVal,'box-shadow':shadowVal,'transform':transformVal}"
-    ><span class="glyphicon glyphicon-ok"></span>أنبياء</button>
+            [ngStyle]="{'opacity':opacityVal7}" >أنبياء
+    </button>
 
     <button type="button" id="8" class="btn btn-primary1 btn-lg btn3d" (click)="checked($event)"
-            [ngStyle]="{'background-color':colorVal,'box-shadow':shadowVal,'transform':transformVal}"
-    ><span class="glyphicon glyphicon-ok"></span>أعمال</button>
+            [ngStyle]="{'opacity':opacityVal8}"
+    >أعمال
+    </button>
 
 </div>
 <!--<div>-->
@@ -42,3 +43,5 @@
 
 <!--</div>-->
 
+<!--<span class="glyphicon glyphicon-ok"></span>-->
+<!--[ngStyle]="{'box-shadow':shadowVal}"-->

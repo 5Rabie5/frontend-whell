@@ -1,3 +1,12 @@
+<div *ngIf="typesFlag === false" class="box">
+    <div class="inner">
+        <span>>{{totalPoint}}</span>
+    </div>
+    <div class="inner">
+        <span> النقاط مجموع </span>
+    </div>
+</div>
+<!--<h1 *ngIf="typesFlag === false">{{totalPoint}}</h1>-->
 <ngx-wheel
     #wheel
     width=' 320'
@@ -17,11 +26,10 @@
 
 
 <div>
-    <button type="button" *ngIf="typesFlag === false && showQuestion2===false && spinButtonFlag"  class="btn btn-info btn-rounded" data-mdb-ripple-color="dark"
-            (click)="spin()">فتشوا الكتب
-    </button>
+    <button type="button" *ngIf="typesFlag === false && showQuestion2===false && spinButtonFlag"
+            class="btn btn-primary btn-lg btn3d" (click)="spin()">فتشوا الكتب<span class="glyphicon glyphicon-ok"></span></button>
 </div>
-<h1 *ngIf="typesFlag === false">{{totalPoint}}</h1>
+
 <div *ngIf="showQuestion2" class="list-group list-group-flush w3-animate-fading w3-animate-zoom">
     <a href="#" class="list-group-item   list-group-item-action active list-group-item-info fade-in "
        aria-current="true">
@@ -35,17 +43,20 @@
     <a *ngIf="visibility[3]" role="button" (click)="check(question,4)"
        class="list-group-item list-group-item-action fade-in show ">{{question.possibility4}}</a>
 </div>
-<app-types-board   *ngIf="typesFlag" (typesEmitter)="changeTypes($event)"></app-types-board>
+<app-types-board *ngIf="typesFlag" (typesEmitter)="changeTypes($event)"></app-types-board>
 <div>
-<!--    <button type="button" *ngIf="typesFlag" class="btn btn-info btn-rounded" data-mdb-ripple-color="dark"-->
-<!--            (click)="wheelRefresh()">قد تم-->
-<!--    </button>-->
-<br><br>
-    <button *ngIf="typesFlag" type="button"  class="btn btn-primary1 btn-lg btn3d" (click)="wheelRefresh()"
-    ><span class="glyphicon glyphicon-ok"></span>قد تم</button>
+    <!--    <button type="button" *ngIf="typesFlag" class="btn btn-info btn-rounded" data-mdb-ripple-color="dark"-->
+    <!--            (click)="wheelRefresh()">قد تم-->
+    <!--    </button>-->
+    <br><br>
+    <button *ngIf="typesFlag" type="button" class="btn btn-primary1 btn-lg btn3d" (click)="wheelRefresh()"
+    ><span class="glyphicon glyphicon-ok"></span>قد تم
+    </button>
 
+    <br><br> <br><br>
 
-    <button type="button" *ngIf="typesFlag === false" class="btn btn-info btn-rounded" data-mdb-ripple-color="dark"
+    <button type="button" id="btnTypes" *ngIf="typesFlag === false" class="btn btn-info btn-rounded"
+            data-mdb-ripple-color="dark"
             (click)="changeTypesFlag()">تغيير انماط الاسئله
     </button>
 </div>
